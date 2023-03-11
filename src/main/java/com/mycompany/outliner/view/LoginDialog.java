@@ -38,12 +38,13 @@ public final class LoginDialog extends JDialog {
     public static LoginDialog getInstance(){
         if(instance == null) instance = new LoginDialog();
         return instance;
+        
     }
     
     private LoginDialog() {
         setTitle("Login");
-        
         createChildControls();
+        
     }
 
     private void createChildControls() {
@@ -83,14 +84,14 @@ public final class LoginDialog extends JDialog {
         });       
         
         layoutControls();
-                
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);       
         setSize(450,250);
         setMinimumSize(new Dimension(450,250)); 
         
     }
     
     private void layoutControls() {
-        
+
         JPanel controlsPanel = new JPanel();
         JPanel buttonsPanel = new JPanel();
         
@@ -183,5 +184,6 @@ public final class LoginDialog extends JDialog {
     
     public void setLoginDialogListener(LoginDialogListener loginDialogListener) {
         this.loginDialogListener = loginDialogListener;
+        
     }
 }

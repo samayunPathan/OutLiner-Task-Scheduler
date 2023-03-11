@@ -5,7 +5,7 @@
  */
 package com.mycompany.outliner.view;
 
-//import com.sun.glass.events.KeyEvent;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -37,6 +37,7 @@ import com.mycompany.outliner.listener.TaskFormDialogListener;
 import com.mycompany.outliner.model.Task;
 
 
+
 public final class TaskFormDialog extends JDialog {
     
     private JLabel titleLabel;
@@ -51,7 +52,6 @@ public final class TaskFormDialog extends JDialog {
     private JCheckBox completedCheck;
     private JLabel subTaskListLabel;
     private SubTaskListPanel subTaskListPanel;
-    
     protected JButton cancelButton;
     protected JButton addEditButton;
     
@@ -68,6 +68,7 @@ public final class TaskFormDialog extends JDialog {
             instance = new TaskFormDialog();
         }
         return instance;
+        
     }
     
     private TaskFormDialog() {
@@ -80,7 +81,7 @@ public final class TaskFormDialog extends JDialog {
         
         ImageIcon image = new ImageIcon(Styling.LOGO_IMAGE);
         setIconImage(image.getImage());
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        
         titleLabel = new JLabel("Title: ");
         titleLabel.setFont(Styling.createFontMedium(true));
         
@@ -202,12 +203,13 @@ public final class TaskFormDialog extends JDialog {
         });
         
         layoutComponents(); 
-
+        
+        
     }
     
     private void layoutComponents() {
         setLayout(new BorderLayout());
-             
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         buttonPanel.add(addEditButton);
@@ -222,7 +224,7 @@ public final class TaskFormDialog extends JDialog {
         formPanel.setLayout(new GridBagLayout());
         
         GridBagConstraints gc = new GridBagConstraints();
-
+        
         // First Row
         gc.gridy = 0;
         
@@ -364,6 +366,7 @@ public final class TaskFormDialog extends JDialog {
     
     public void prepareForm() {
         setTitle(isEditMode() ? "Edit Task" : "New Task");
+        
         addEditButton.setText(isEditMode() ? "Save Task" : "Add Task");
         addEditButton.setForeground(Styling.createColor(700));
         cancelButton.setForeground(Styling.createColor(700));
@@ -372,7 +375,8 @@ public final class TaskFormDialog extends JDialog {
         targetDatePicker.getJFormattedTextField().setText(getTask().getTargetDateAsString());
         priorityComboBox.setSelectedIndex(getTask().getPriority()-1);
         completedCheck.setSelected(getTask().isCompleted());
-        subTaskListPanel.setSubTasks(getTask().getSubTasks());        
+        subTaskListPanel.setSubTasks(getTask().getSubTasks());  
+//        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
     
     public void setTaskFormDialogListener(TaskFormDialogListener taskFormDialogListener) {

@@ -5,7 +5,7 @@
  */
 package com.mycompany.outliner.view;
 
-//import com.sun.glass.events.KeyEvent;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

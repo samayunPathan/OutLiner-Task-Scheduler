@@ -58,6 +58,7 @@ com\mycompany\outliner\model\TaskByTitleDescendingComparator.class
 com\mycompany\outliner\view\UserDialog$2.class
 com\mycompany\outliner\view\PreviewPanelSubTaskItem.class
 com\mycompany\outliner\view\TopBarPanel$1.class
+.netbeans_automatic_build
 com\mycompany\outliner\controller\AppMenuBarController$1.class
 com\mycompany\outliner\controller\TaskFormDialogController.class
 com\mycompany\outliner\listener\NavBarLinkListener.class

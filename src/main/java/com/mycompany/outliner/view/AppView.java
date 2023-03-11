@@ -80,6 +80,7 @@ public final class AppView extends JFrame {
         appController.bind(false); 
         
         showLoginDialog();
+//        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
     public void refresh() {
@@ -101,7 +102,8 @@ public final class AppView extends JFrame {
         loginDialog.pack();
         loginDialog.setLocationRelativeTo(this);
         loginDialog.setFocus();
-        loginDialog.setVisible(true);        
+        loginDialog.setVisible(true);  
+        
     }   
     
     public void showTaskFormDialog(Task task) {
@@ -116,10 +118,11 @@ public final class AppView extends JFrame {
         taskFormDialog.setPreferredSize(new Dimension(800,600));
         taskFormDialog.setMinimumSize(new Dimension(800,600));
         taskFormDialog.setMaximumSize(new Dimension(800,600));
-        taskFormDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        taskFormDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         taskFormDialog.pack();        
         taskFormDialog.setLocationRelativeTo(this);        
-        taskFormDialog.setVisible(true);     
+        taskFormDialog.setVisible(true);   
+//        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }    
     /**
      * @return the topBarPanel
